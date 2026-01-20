@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Timer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Top Left Controls -->
+        <div class="top-left">
+            <button class="nav-btn" id="infoBtn">
+                <span class="icon">i</span>
+                <span>Info</span>
+            </button>
+            <button class="nav-btn" id="preferencesBtn">
+                <span class="icon">⚙</span>
+                <span>Preferences</span>
+            </button>
+            <button class="nav-btn" id="blogBtn">
+                <span class="icon">⚙</span>
+                <span>Blog</span>
+            </button>
+        </div>
+
+        <!-- Top Right Controls -->
+        <div class="top-right">
+            <div class="toggle-group">
+                <span class="toggle-label">Repeat</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="repeatToggle" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <button class="nav-btn fullscreen-btn" id="fullscreenBtn">
+                <span class="icon">⛶</span>
+                <span>Fullscreen</span>
+            </button>
+        </div>
+
+        <!-- Main Timer Display -->
+        <div class="timer-container">
+            <!-- Start/Pause Button -->
+            <button class="control-btn pause-btn" id="pauseBtn">Start</button>
+
+            <!-- Timer Display -->
+            <div class="timer-display">
+                <div class="time-unit">
+                    <div class="time-value editable" id="hours" data-type="hours" data-max="99">1</div>
+                    <div class="time-label">Hours</div>
+                </div>
+                <div class="separator"></div>
+                <div class="time-unit">
+                    <div class="time-value editable" id="minutes" data-type="minutes" data-max="59">02</div>
+                    <div class="time-label">Minutes</div>
+                </div>
+                <div class="separator"></div>
+                <div class="time-unit">
+                    <div class="time-value editable" id="seconds" data-type="seconds" data-max="59">31</div>
+                    <div class="time-label">Seconds</div>
+                </div>
+            </div>
+
+            <!-- Plus/Minus Buttons -->
+            <div class="adjust-buttons">
+                <button class="control-btn adjust-btn" id="increaseBtn">+</button>
+                <button class="control-btn adjust-btn" id="decreaseBtn">-</button>
+            </div>
+        </div>
+
+        <!-- Info Modal -->
+        <div class="modal" id="infoModal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Info</h2>
+                <p>Big Timer - A simple, elegant countdown timer.</p>
+                <p>Use the controls to start, pause, and adjust the timer.</p>
+            </div>
+        </div>
+
+        <!-- Preferences Modal -->
+        <div class="modal" id="preferencesModal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Preferences</h2>
+                <div class="preference-item">
+                    <label for="initialHours">Initial Hours:</label>
+                    <input type="number" id="initialHours" min="0" max="99" value="1">
+                </div>
+                <div class="preference-item">
+                    <label for="initialMinutes">Initial Minutes:</label>
+                    <input type="number" id="initialMinutes" min="0" max="59" value="2">
+                </div>
+                <div class="preference-item">
+                    <label for="initialSeconds">Initial Seconds:</label>
+                    <input type="number" id="initialSeconds" min="0" max="59" value="31">
+                </div>
+                <button class="save-btn" id="savePreferences">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
